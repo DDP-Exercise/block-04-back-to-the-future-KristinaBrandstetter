@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Back to the Future</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+    </style>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
+    <div class="flex-container">
+        <div class="flex-item" id="digitalWatch">
+            <h2>Digital Time</h2>
+        </div>
+        <div class="flex-item" id="analogWatch">
+            <h2>Analog Time</h2>
+        </div>
+    </div>
+    <div class="container">
+    <div id="btn">
+    </div>
+</div>
 
+<script type="module" src="./js/model.time.js"></script>
+<script type="module" src="./js/controller.js"></script>
+<script type="module" src="./js/view.analagoue.js"></script>
+<script type="module" src="./js/view.digital.js"></script>
 </body>
 </html>
