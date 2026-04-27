@@ -8,3 +8,93 @@ body{
     padding: 0;
     margin: 0;
 }
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-item {
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+p {
+    color: white;
+    font-size: 35px;
+    font-family: orbitron;
+}
+
+#clockFace{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    border: 5px solid white;
+    background-color: rgba(211, 211, 211, 0.39);
+}
+
+#hourHand{
+    width: 4px;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    transform-origin: bottom center;
+    left: 50%;
+    bottom: 50%;
+    margin-left: -2px;
+}
+
+#minuteHand{
+    width: 3px;
+    height: 80px;
+    background-color: black;
+    position: absolute;
+    transform-origin: bottom center;
+    left: 50%;
+    bottom: 50%;
+    margin-left: -2px;
+}
+
+#secondHand{
+    width: 2px;
+    height: 90px;
+    background-color: black;
+    position: absolute;
+    transform-origin: bottom center;
+    left: 50%;
+    bottom: 50%;
+    margin-left: -2px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn button{
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 1.5px solid white;
+    padding: 7px;
+    color: white;
+    background-color: rgba(105, 105, 105, 0.42);
+}
+
+#btn button:hover{
+    background-color: rgba(105, 105, 105, 0.85);
+    color: black;
+    border: 1.5px solid black;
+    cursor: pointer;
+    box-shadow: 5px 5px 20px black;
+}
+

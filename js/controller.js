@@ -31,7 +31,39 @@
  *     Now hurry Marty! Or I will be stuck in the past forever!
  *
  *     Doc Brown - 1955-11-05
+ *     Kristina - 2026-04-23
  *******************************************************/
 
 // HINT:
-// setInterval(functionName, 1000); will call functionName() every 1000 miliseconds.
+//setInterval(functionName, 1000); //will call functionName() every 1000 miliseconds. z.B den Sekundenzeiger vorrücke z.B.
+
+import {nowTimeModel} from "./model.time.js";
+import {digitalNowTimeView} from "./view.digital.js";
+import {analogeNowTimeView} from "./view.analagoue.js";
+
+export let nowTimeController = {
+    updateTime: function () {
+        nowTimeModel.setTime();
+        digitalNowTimeView.getTime();
+        analogeNowTimeView.moveHands();
+    },
+    init(){
+        digitalNowTimeView.init();
+        analogeNowTimeView.init();
+        setInterval(nowTimeController.updateTime, 1000);
+        this.currentTime();
+    },
+
+    currentTime: function () {
+        this.button = document.createElement("button");
+        this.button.textContent = "Save current time to local storage";
+        this.button.addEventListener("click", nowTimeController.saveTime);
+        document.getElementById("btn").appendChild(this.button);
+    },
+
+    saveTime: function () {
+        localStorage.setItem("currentTime", nowTimeModel.nowTime);
+    }
+}
+
+nowTimeController.init();
